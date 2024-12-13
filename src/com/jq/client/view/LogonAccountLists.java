@@ -13,7 +13,7 @@ public class LogonAccountLists extends JComboBox<Object> {
 	public LogonAccountLists(Object[] items) {
 		super(items);
 		
-		LogonAccountListsCell perInfo = new LogonAccountListsCell();
+		LogonAccountCell perInfo = new LogonAccountCell();
 
 		this.setRenderer(perInfo);
 	}

@@ -11,13 +11,13 @@ import javax.swing.JPanel;
 import javax.swing.ListCellRenderer;
 
 @SuppressWarnings("serial")
-public class LogonAccountListsCell extends JPanel implements ListCellRenderer<Object> {
+public class LogonAccountCell extends JPanel implements ListCellRenderer<Object> {
 	private ImageIcon icon;
 	private String account;
 	private Color background;
 	private Color foreground;
 	
-	public LogonAccountListsCell()
+	public LogonAccountCell()
 	{
 		super();
 		this.setOpaque(false);
