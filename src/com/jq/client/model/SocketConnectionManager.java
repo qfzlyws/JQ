@@ -1,17 +1,19 @@
-// SocketMessageManager.java
-// SocketMessageManager communicates with a DeitelMessengerServer using
-// Sockets and MulticastSockets.
 package com.jq.client.model;
 
 import java.net.*;
+import java.nio.charset.StandardCharsets;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.*;
 
 import com.jq.ConnectionManager;
 import com.jq.JQConstants;
 import com.jq.MessageListener;
-import com.jq.client.view.FriendsList;
 
 public class SocketConnectionManager implements ConnectionManager {
+	private static Logger loger = LogManager.getLogger(SocketConnectionManager.class);
 	private Account account;
 	private Socket clientSocket;
 	private BufferedReader br;
@@ -36,21 +38,16 @@ public class SocketConnectionManager implements ConnectionManager {
 		if (connected)
 			return;
 
-		// open Socket connection to DeitelMessengerServer
 		try {
 			clientSocket = new Socket(InetAddress.getByName(serverAddress), JQConstants.SERVER_PORT);
-			//clientSocket.setSoTimeout(5000);
 
-			br = new BufferedReader(new InputStreamReader(clientSocket.getInputStream(),"UTF-8"));
-			ps = new PrintWriter(new OutputStreamWriter(clientSocket.getOutputStream(),"UTF-8"));
+			br = new BufferedReader(new InputStreamReader(clientSocket.getInputStream(), StandardCharsets.UTF_8));
+			ps = new PrintWriter(new OutputStreamWriter(clientSocket.getOutputStream(), StandardCharsets.UTF_8));
 
 			// update connected flag
 			connected = true;
-		}
-
-		// handle exception connection to server
-		catch (IOException ioException) {
-			ioException.printStackTrace();
+		} catch (IOException ioException) {
+			loger.error("", ioException);
 		}
 	}
 
@@ -75,11 +72,7 @@ public class SocketConnectionManager implements ConnectionManager {
 
 			// close outgoing Socket
 			clientSocket.close();
-		}
-
-		// handle exception disconnecting from server
-		catch (IOException ioException) {
-			// ioException.printStackTrace();
+		} catch (IOException ioException) {
 		}
 
 		// update connected flag
@@ -95,7 +88,6 @@ public class SocketConnectionManager implements ConnectionManager {
 
 		ps.println(from + JQConstants.MESSAGE_SEPARATOR + to + JQConstants.MESSAGE_SEPARATOR + message);
 		ps.flush();
-
 	}
 
 	public String login(String account, String password) {
@@ -112,7 +104,7 @@ public class SocketConnectionManager implements ConnectionManager {
 				sendMessage(account, JQConstants.WHOISONLINE, JQConstants.WHOISONLINE);
 
 				String onlineUserStr = br.readLine();
-				
+
 				this.account = new Account(account, password);
 
 				return JQConstants.SUCESS_FLAG + onlineUserStr;
@@ -124,31 +116,13 @@ public class SocketConnectionManager implements ConnectionManager {
 			return "登录失败!";
 		}
 	}
-	
-	public void setMessageListener(MessageListener listener)
-	{		
+
+	public void setMessageListener(MessageListener listener) {
 		receivingThread = new ReceiveMessageThread(br, listener);
 		receivingThread.start();
 	}
-	
-	public Account getAccount()
-	{
+
+	public Account getAccount() {
 		return account;
 	}
-	
-	/*private String getUTF8Message(String message)
-	{
-		String utf8Mess;
-		
-		try {
-			utf8Mess = new String(message.getBytes(),"UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			utf8Mess = null;
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-		}
-		
-		return utf8Mess;
-	}*/
-
 }

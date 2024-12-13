@@ -3,26 +3,23 @@ package com.jq.client.model;
 import java.io.Serializable;
 
 public class Account implements Serializable{	
-	/**
-	 * 
-	 */
-	
-	private String account = null;
+	private static final long serialVersionUID = 1L;
+	private String accountName = null;
 	private String password = null;
 	private String profilePic = null;
 
-	public Account(String account,String password)
+	public Account(String accountName,String password)
 	{
-		this.account = account;
+		this.accountName = accountName;
 		this.password = password;
 	}
 
-	public String getAccount() {
-		return account;
+	public String getAccountName() {
+		return accountName;
 	}
 
-	public void setAccount(String account) {
-		this.account = account;
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
 	}
 
 	public String getPassword() {

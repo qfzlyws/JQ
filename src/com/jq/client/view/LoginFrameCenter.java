@@ -3,16 +3,13 @@ package com.jq.client.view;
 import java.awt.*;
 import javax.swing.*;
 
-import com.jq.client.model.Account;
-import com.jq.client.model.JQMain;
-import com.jq.client.model.ReadAccounts;
-
+@SuppressWarnings("serial")
 public class LoginFrameCenter extends JPanel {
 	private GridBagConstraints constraints;
 	private GridBagLayout layout;
 	private JLabel logo;
 	private JLabelBeClicked registerJL,forgetJL;
-	private AccountJComboBox accountJCB;
+	private LogonAccountLists accountJCB;
 	private JPasswordField passwordJPF;
 	private JPanel panelBottom;
 	private JCheckBox savePassJCB,autoLoginJCB;
@@ -23,10 +20,6 @@ public class LoginFrameCenter extends JPanel {
 	public LoginFrameCenter()
 	{
 		super();
-		
-		//讀取已經登錄過系統的賬號
-		//ReadAccounts.readAccounts();
-		//accounts = ReadAccounts.getAccountArray();
 		
 		layout = new GridBagLayout();
 		constraints = new GridBagConstraints();
@@ -41,9 +34,9 @@ public class LoginFrameCenter extends JPanel {
 		forgetJL = new JLabelBeClicked("忘記密碼");
 		
 		if(accounts == null)
-			accountJCB = new AccountJComboBox();
+			accountJCB = new LogonAccountLists();
 		else
-			accountJCB = new AccountJComboBox(accounts);
+			accountJCB = new LogonAccountLists(accounts);
 		
 		accountJCB.setEditable(true);
 		

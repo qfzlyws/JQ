@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="%d{yyyy/MM/dd HH:mm:ss}:[%C-%M]-%m%n"/>
+		</Console>
+		<File name="log" fileName="./errors.txt" append="false">
+			<PatternLayout pattern="%d{yyyy/MM/dd HH:mm:ss}:[%C-%M]-%m%n"/>
+		</File>
+	</Appenders>
+	
+	<loggers>
+		<root level="INFO">
+			<appender-ref ref="log"/>
+			<appender-ref ref="console"/>
+		</root>
+	</loggers>
+</Configuration>

@@ -9,6 +9,7 @@ import com.jq.ConnectionManager;
 import com.jq.utilities.GUITools;
 
 public class ChatRoom extends JFrame implements ActionListener {
+	private static final long serialVersionUID = 1L;
 	private ConnectionManager connManager;
 	private String friendAccount = null;
 	private JTextArea displayMessages = null;
@@ -16,6 +17,8 @@ public class ChatRoom extends JFrame implements ActionListener {
 	private JButton send = null;
 	private JPanel sourthPanel = null;
 	private JSplitPane splitPane = null;
+	private JList<JLabel> messageLists = null;
+	private DefaultListModel<JLabel> messageModel = null;
 	
 	public ChatRoom(ConnectionManager connManager,String friendAccount)
 	{
@@ -23,6 +26,10 @@ public class ChatRoom extends JFrame implements ActionListener {
 		
 		this.connManager = connManager;
 		this.friendAccount = friendAccount;
+		
+		messageModel = new DefaultListModel<>();
+		messageLists = new JList<>(messageModel);
+		messageLists.setCellRenderer(new ChatMessageCell());
 		
 		displayMessages = new JTextArea(15,10);
 		displayMessages.setEditable(false);
@@ -37,7 +44,7 @@ public class ChatRoom extends JFrame implements ActionListener {
 		sourthPanel.add(inputField,BorderLayout.CENTER);
 		sourthPanel.add(send,BorderLayout.EAST);
 		
-		splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,new JScrollPane(displayMessages),new JScrollPane(sourthPanel));
+		splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,new JScrollPane(messageLists),new JScrollPane(sourthPanel));
 		splitPane.setOneTouchExpandable(true);
 		splitPane.setDividerLocation(310);
 		splitPane.setDividerSize(7);
@@ -47,32 +54,35 @@ public class ChatRoom extends JFrame implements ActionListener {
 		send.addActionListener(this);
 		
 		this.setSize(400, 400);
-		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(HIDE_ON_CLOSE);
 		this.setVisible(true);
 		GUITools.setFrameCenter(this);
 	}
 	
-	public void setDisplayMessages(final String messageToDisplay) {
+	public void setDisplayMessages(String from,final String messageToDisplay) {
 		// display message from event-dispatch thread of execution
-		SwingUtilities.invokeLater(new Runnable() { // inner class to ensure GUI
-													// updates properly
-			public void run() {
-				displayMessages.append(messageToDisplay + "\n");
-				//displayMessages.setText(messageToDisplay);
-			}
-		});
+		JLabel messageLabel = new JLabel();
+		messageLabel.setText(messageToDisplay);
+		
+		if(from.equals(connManager.getAccount().getAccountName()))
+			messageLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+		else
+			messageLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		
+		messageModel.addElement(messageLabel);		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String message = inputField.getText();
 		
-		if(!message.equals("") && message != null)
+		if(!message.equals(""))
 		{
-			JOptionPane.showMessageDialog(this, message);
-			connManager.sendMessage(connManager.getAccount().getAccount(), friendAccount, message);
-			setDisplayMessages(connManager.getAccount().getAccount() + ":" + message);
+			connManager.sendMessage(connManager.getAccount().getAccountName(), friendAccount, message);
+			setDisplayMessages(connManager.getAccount().getAccountName(),connManager.getAccount().getAccountName() + ":" + message);
 			inputField.setText("");
 		}
 	}
+	
+	
 }

@@ -3,13 +3,16 @@ package com.jq.client.model;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InterruptedIOException;
-import java.io.UnsupportedEncodingException;
 import java.util.StringTokenizer;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.jq.JQConstants;
 import com.jq.MessageListener;
 
 public class ReceiveMessageThread extends Thread {
+	private static Logger loger = LogManager.getLogger(ReceiveMessageThread.class);
 	private BufferedReader br;
 	
 	// MesssageListener to whom messages should be delviered
@@ -17,8 +20,6 @@ public class ReceiveMessageThread extends Thread {
 
 	// flag for terminating PacketReceivingThread
 	private boolean keepListening = true;
-	
-	private String receivedMess;
 
 	// PacketReceivingThread constructor
 	public ReceiveMessageThread(BufferedReader br,MessageListener listener)
@@ -35,21 +36,17 @@ public class ReceiveMessageThread extends Thread {
 
 	// listen for messages from client socket
 	public void run() {
+		String receivedMess;
+		
 		// listen for messages until stopped
 		while (keepListening) {
-			
 			try {
 				receivedMess = br.readLine();
-				
-				System.out.println("ReceiveMessageThread:" + receivedMess);
-			}
-
-			// handle exception when receive times out
-			catch (InterruptedIOException interruptedIOExeption) {
+			}catch (InterruptedIOException interruptedIOExeption) {
 				// continue to next iteration to keep listening
 				continue;
 			} catch (IOException ioException) {
-				ioException.printStackTrace();
+				loger.error("",ioException);
 				break;
 			}
 			

@@ -5,6 +5,7 @@ import java.awt.Image;
 
 import javax.swing.*;
 
+@SuppressWarnings("serial")
 public class LoginFrameBackground extends JPanel {
 	private Image backGroundIcon = null;
 	
@@ -14,11 +15,10 @@ public class LoginFrameBackground extends JPanel {
 		this.setOpaque(true);
 	}
 	
+	@Override
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
 		g.drawImage(backGroundIcon, 0, 0, this);
 	}
-	
-	
 }

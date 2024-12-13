@@ -8,7 +8,7 @@ import com.jq.client.view.*;
 
 public class JQMain {
 
-	public final static String appPath = System.getProperty("user.dir");
+	public static final String APPPATH = System.getProperty("user.dir");
 	
 	public static void main(String[] args) {
 		ConnectionManager connManager = new SocketConnectionManager(JQConstants.SERVER_ADDRESS);
@@ -16,7 +16,5 @@ public class JQMain {
 		LoginFrame loginFrame = new LoginFrame(connManager);
 		
 		loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 	}
-
 }

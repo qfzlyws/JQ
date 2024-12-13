@@ -1,7 +1,5 @@
 package com.jq;
 
-import java.net.Socket;
-
 import com.jq.client.model.Account;
 
 /**

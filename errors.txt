@@ -1,0 +1,169 @@
+2024/12/13 14:32:41:[com.jq.server.JQServer-main]-Server listening on port 12345...
+2024/12/13 14:34:57:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 14:34:57:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:1
+2024/12/13 14:34:59:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 14:34:59:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:0
+2024/12/13 14:52:49:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 14:52:49:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:1
+2024/12/13 14:52:50:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 14:52:50:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:0
+2024/12/13 15:20:53:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 15:20:53:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:1
+2024/12/13 15:20:55:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 15:20:55:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:0
+2024/12/13 15:49:28:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 15:49:28:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:1
+2024/12/13 15:49:29:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 15:49:29:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:0
+2024/12/13 15:57:10:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 15:57:10:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:1
+2024/12/13 15:57:12:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 15:57:12:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:0
+2024/12/13 16:14:14:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 16:14:14:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:1
+2024/12/13 16:14:16:[com.jq.server.ServerThreadTask-run]-
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_192]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_192]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_192]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_192]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_192]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_192]
+	at com.jq.server.ServerThreadTask.run(ServerThreadTask.java:31) ~[bin/:?]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_192]
+2024/12/13 16:14:16:[com.jq.server.ServerThreadTask-clearSocket]-Sockets number:0

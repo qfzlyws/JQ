@@ -5,23 +5,31 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.jq.JQConstants;
 
 public class JQServer {
-	//public static ArrayList<Socket> socketList = new ArrayList<Socket>();
-	public static ConcurrentHashMap<String, Socket> clientSocketLists = null;
-	
-	public static void main(String[] args) throws IOException {
-		ServerSocket ss = new ServerSocket(JQConstants.SERVER_PORT,0,InetAddress.getByName(JQConstants.SERVER_ADDRESS));
-		
-		System.out.println("Server listening on port " + JQConstants.SERVER_PORT + "...");
-		clientSocketLists = new ConcurrentHashMap<String,Socket>();
-		while(true)
-		{
-			Socket s = ss.accept();
+	private static Logger loger = LogManager.getLogger(JQServer.class);
+	public static ConcurrentMap<String, Socket> clientSocketLists = null;
+
+	public static void main(String[] args) {
+		try (ServerSocket ss = new ServerSocket(JQConstants.SERVER_PORT, 0,
+				InetAddress.getByName(JQConstants.SERVER_ADDRESS))) {
+
+			loger.info("Server listening on port {}",JQConstants.SERVER_PORT + "...");
 			
-			new Thread(new ServerThread(s)).start();
+			clientSocketLists = new ConcurrentHashMap<>();
+			while (true) {
+				Socket s = ss.accept();
+
+				new Thread(new ServerThreadTask(s)).start();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }

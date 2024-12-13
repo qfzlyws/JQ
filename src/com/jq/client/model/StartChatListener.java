@@ -2,35 +2,27 @@ package com.jq.client.model;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.net.Socket;
-
 import javax.swing.JList;
 
-import com.jq.client.view.ChatRoom;
-import com.jq.client.view.FriendsList;
-import com.jq.client.view.FriendsListCell;
+import com.jq.client.view.FriendsListFrame;
 
 public class StartChatListener extends MouseAdapter {
-	private FriendsList friendsList = null;
-	
-	public StartChatListener(FriendsList friendsList)
-	{
+	private FriendsListFrame friendsList = null;
+
+	public StartChatListener(FriendsListFrame friendsList) {
 		this.friendsList = friendsList;
 	}
-	
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		
-		if(e.getClickCount() == 2)
-		{
-			if(e.getSource() instanceof JList)
-			{
-				JList list = (JList)e.getSource();
-				String clickedFriend = (String) list.getSelectedValue();
-				
-				friendsList.getChatRoom(clickedFriend);
-			}
+
+		if (e.getClickCount() == 2 && e.getSource() instanceof JList) {
+
+			@SuppressWarnings("unchecked")
+			JList<String> list = (JList<String>) e.getSource();
+			String clickedFriend = list.getSelectedValue();
+
+			friendsList.getChatRoom(clickedFriend).setVisible(true);
 		}
 	}
-	
 }
